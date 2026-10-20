@@ -57,8 +57,16 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = InterceptDatabaseHelper.getInstance(this);
         appPreferences = AppPreferences.getInstance(this);
 
-        initViews();
-        KeepAliveForegroundService.start(this);
+        try {
+            initViews();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            KeepAliveForegroundService.start(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void initViews() {
