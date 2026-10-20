@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F4F6F9"
+    android:padding="16dp">
+
+    <!-- 顶部状态大卡片 (MagicOS 风格圆角) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_card_rounded"
+        android:padding="20dp"
+        android:elevation="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <View
+                android:id="@+id/view_status_dot"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/dot_status_active" />
+
+            <TextView
+                android:id="@+id/tv_status_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="清屏静默守护中"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#191919" />
+
+            <TextView
+                android:id="@+id/tv_silent_mode_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_button_secondary"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:text="静默无感"
+                android:textColor="#2B70F5"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- 统计核心大数字 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="18dp">
+
+            <TextView
+                android:id="@+id/tv_total_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="44sp"
+                android:textStyle="bold"
+                android:textColor="#2B70F5"
+                android:fontFamily="sans-serif-medium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginBottom="8dp"
+                android:text="次自动跳过"
+                android:textSize="14sp"
+                android:textColor="#888888" />
+        </LinearLayout>
+
+        <!-- 核心授权与控制按钮 -->
+        <Button
+            android:id="@+id/btn_toggle_service"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_button_primary"
+            android:textColor="#FFFFFF"
+            android:text="无障碍权限检测"
+            android:textSize="14sp" />
+
+        <!-- 针对荣耀 MagicOS 专属保活指引 -->
+        <Button
+            android:id="@+id/btn_honor_keepalive"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_button_secondary"
+            android:textColor="#2B70F5"
+            android:text="荣耀MagicOS保活设置 (允许自启动/后台活动)"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- 功能开关行卡片 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_card_rounded"
+        android:padding="16dp"
+        android:elevation="1dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="防误触透明护盾"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#222222" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="启动前2秒拦截误触区域底图，防误滑跳转"
+                android:textSize="12sp"
+                android:textColor="#999999"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/switch_shield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- 拦截列表卡片容器 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_card_rounded"
+        android:padding="16dp"
+        android:elevation="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="各应用拦截明细"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#222222" />
+
+            <!-- 清空记录按钮 -->
+            <TextView
+                android:id="@+id/tv_clear_records"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="清空数据"
+                android:textSize="13sp"
+                android:textColor="#FF5252"
+                android:padding="4dp" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv_stats"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#F0F0F0"
+            android:dividerHeight="1dp" />
+    </LinearLayout>
+
+</LinearLayout>

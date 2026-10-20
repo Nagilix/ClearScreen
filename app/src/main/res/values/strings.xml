@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">清屏</string>
+    <string name="accessibility_service_description">“清屏”需要无障碍权限以识别并自动点击各App开屏广告的“跳过”按钮，并在误触/摇一摇敏感区域时提供保护。所有识别与拦截均在本地进行，不会收集任何个人隐私数据。</string>
+    <string name="service_running">拦截服务运行中</string>
+    <string name="service_stopped">拦截服务未开启</string>
+    <string name="total_intercepted">累计拦截</string>
+    <string name="times_unit">次</string>
+</resources>
