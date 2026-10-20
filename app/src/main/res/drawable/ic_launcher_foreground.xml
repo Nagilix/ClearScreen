@@ -1,13 +1,45 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- 盾牌与闪电清屏图标 -->
+    
+    <!-- 极光光晕背景 -->
+    <path
+        android:fillColor="#15FFFFFF"
+        android:pathData="M54,54m-38,0a38,38 0 1,0 76,0a38,38 0 1,0 -76,0" />
+
+    <!-- 现代羽翼/飞跃形态盾牌外框 -->
+    <path
+        android:pathData="M54,20 C42,20 30,26 26,30 C26,52 36,75 54,88 C72,75 82,52 82,30 C78,26 66,20 54,20 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:angle="90"
+                android:startColor="#00E5FF"
+                android:endColor="#00B0FF"
+                android:type="linear" />
+        </aapt:attr>
+    </path>
+
+    <!-- 内部纯净晶体层 -->
+    <path
+        android:pathData="M54,26 C44,26 34,31 31,34 C31,52 39,70 54,81 C69,70 77,52 77,34 C74,31 64,26 54,26 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:angle="90"
+                android:startColor="#0D47A1"
+                android:endColor="#1976D2"
+                android:type="linear" />
+        </aapt:attr>
+    </path>
+
+    <!-- 极速跳过双箭头 (科技感纯白发光) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M54,24 L34,32 L34,54 C34,67 42.5,79 54,84 C65.5,79 74,67 74,54 L74,32 Z"/>
+        android:pathData="M44,42 L53,52 L44,62 L48,65 L60,52 L48,39 Z" />
     <path
-        android:fillColor="#2B70F5"
-        android:pathData="M56,38 L44,52 L52,52 L50,68 L62,54 L54,54 Z"/>
+        android:fillColor="#80FFFFFF"
+        android:pathData="M57,42 L66,52 L57,62 L60,65 L71,52 L60,39 Z" />
+
 </vector>
